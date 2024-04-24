@@ -11,6 +11,8 @@ public class Player_SO : ScriptableObject
     public bool isSprinting;
     public float stamina = 100;
     public bool canMove;
+    public bool isFlashLightOn;
+    public bool hasFlashLight;
     // conditionState
 
 

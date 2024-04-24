@@ -10,8 +10,8 @@ public class FlashlightController : MonoBehaviour
     CapsuleCollider cC;
     Light l;
 
-    bool isFlashLightOn;
-    public bool hasFlashLight;
+    //bool isFlashLightOn;
+    //public bool hasFlashLight;
 
     [SerializeField] float maxCharge;
     [SerializeField] float charge;
@@ -24,7 +24,7 @@ public class FlashlightController : MonoBehaviour
         l = gameObject.GetComponent<Light>();
 
         l.enabled = false;
-        cC.enabled = false;
+        //cC.enabled = false;
     }
 
     private void Update()
@@ -55,33 +55,33 @@ public class FlashlightController : MonoBehaviour
 
     void ToggleFlashLight()
     {
-        if (hasFlashLight)
+        if (player.hasFlashLight)
         {
-            if (isFlashLightOn)
+            if (player.isFlashLightOn)
             {
-                cC.enabled = false;
+                //cC.enabled = false;
                 l.enabled = false;
-                isFlashLightOn = false;
+                player.isFlashLightOn = false;
             }
-            else if (!isFlashLightOn && charge > 0)
+            else if (!player.isFlashLightOn && charge > 0)
             {
-                cC.enabled = true;
+                //cC.enabled = true;
                 l.enabled = true;
-                isFlashLightOn = true;
+                player.isFlashLightOn = true;
             }
         }
     }
 
     void DrainCharge()
     {
-        if (isFlashLightOn)
+        if (player.isFlashLightOn)
         {
             charge -= drainAmount * Time.deltaTime;
             if (charge <= 0)
             {
                 cC.enabled = false;
                 l.enabled = false;
-                isFlashLightOn = false;
+                player.isFlashLightOn = false;
             }
         }
 

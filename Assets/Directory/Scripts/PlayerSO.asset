@@ -14,4 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   batteries: 0
-  stamina: 100
+  keys: 2
+  isSprinting: 0
+  stamina: 100.01355
+  canMove: 1
+  isFlashLightOn: 0
+  hasFlashLight: 1
