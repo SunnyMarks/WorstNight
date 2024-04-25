@@ -6,6 +6,8 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class AINav : MonoBehaviour
 {
+    
+
     [SerializeField] private Transform movePositionTransform;
 
     private NavMeshAgent navMeshAgent;
@@ -31,6 +33,7 @@ public class AINav : MonoBehaviour
         {
             navMeshAgent.destination = movePositionTransform.position;
         }
+        
         
     }
 
@@ -62,4 +65,6 @@ public class AINav : MonoBehaviour
     {
         seesPlayer = false;
     }
+
+    
 }

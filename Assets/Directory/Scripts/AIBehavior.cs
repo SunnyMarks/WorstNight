@@ -22,6 +22,9 @@ public class AIBehavior : MonoBehaviour
 
     bool isCharging;
 
+    [SerializeField] private Animator animator;
+    private string currentAnimation = "";
+
     void Start()
     {
         aINav = gameObject.GetComponent<AINav>();
@@ -55,22 +58,24 @@ public class AIBehavior : MonoBehaviour
         }
 
         FlipSprite();
+        CheckAnimation();
     }
 
     void GiveChase()
     {
+        animator.speed = 2;
         navMeshAgent.speed = chaseSpeed;
     }
 
     void ChargeAtPlayer()
     {
-        navMeshAgent.speed = chargeSpeed;
-
-        
+        animator.speed = 3;
+        navMeshAgent.speed = chargeSpeed;  
     }
 
     void Patrol()
     {
+        animator.speed = 1;
         navMeshAgent.speed = patrolSpeed;
     }
 
@@ -115,6 +120,27 @@ public class AIBehavior : MonoBehaviour
             {
                 spriteRenderer.flipX = true;
             }
+        }
+    }
+
+    private void ChangeAnimation(string animation, float crossfade = 0.2f)
+    {
+        if (currentAnimation != animation)
+        {
+            currentAnimation = animation;
+            animator.CrossFade(animation, crossfade);
+        }
+    }
+
+    private void CheckAnimation()
+    {
+        if (navMeshAgent.velocity != Vector3.zero)
+        {
+            ChangeAnimation("Walk");
+        }
+        else
+        {
+            ChangeAnimation("Idle");
         }
     }
 }
