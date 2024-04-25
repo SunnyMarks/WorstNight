@@ -168,6 +168,7 @@ public class AIBehavior : MonoBehaviour
         }
         else
         {
+            Debug.Log("hi");
             ChangeAnimation("Idle");
         }
     }
