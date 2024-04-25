@@ -31,8 +31,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator animator;
     private string currentAnimation = "";
 
+    [SerializeField] private List<GameObject> horizontalSpheres;
+    [SerializeField] private List<GameObject> forwardSpheres;
 
-   
+    [SerializeField] float fowardRayDist;
+    [SerializeField] float horizontalRayDist;
+
+    public LayerMask wallLayer;
+
+
 
     void Start()
     {
@@ -65,7 +72,7 @@ public class PlayerController : MonoBehaviour
 
     private void CheckAnimation()
     {
-        if(move.action.ReadValue<Vector2>() != new Vector2(0,0) && player.canMove)
+        if(moveDir != new Vector3(0,-1,0) && player.canMove)
         {
             ChangeAnimation("Walk");
         }
@@ -84,15 +91,57 @@ public class PlayerController : MonoBehaviour
     void ApplyMovement()
     {
         moveDir = move.action.ReadValue<Vector2>();
-        Debug.Log(move.action.ReadValue<Vector2>());
+        //Debug.Log(move.action.ReadValue<Vector2>());
+        //Debug.Log(moveDir);
 
 
 
+        if (moveDir.y > 0)
+        {
+            foreach(GameObject o in forwardSpheres)
+            {
+                RaycastHit hit;
+                if(Physics.Raycast(o.transform.position, Vector3.forward, out hit, fowardRayDist, wallLayer))
+                {
+                    if(hit.collider)
+                    {
+                        moveDir.y = 0;
+                    }
+                }
+            }
+        }
+        if (moveDir.x > 0)
+        {
+            foreach (GameObject o in horizontalSpheres)
+            {
+                RaycastHit hit;
+                if (Physics.Raycast(o.transform.position, Vector3.right, out hit, horizontalRayDist, wallLayer))
+                {
+                    if (hit.collider)
+                    {
+                        moveDir.x = 0;
+                    }
+                }
+            }
+        }
+        if (moveDir.x < 0)
+        {
+            foreach (GameObject o in horizontalSpheres)
+            {
+                RaycastHit hit;
+                if (Physics.Raycast(o.transform.position, Vector3.left, out hit, horizontalRayDist, wallLayer))
+                {
+                    if (hit.collider)
+                    {
+                        moveDir.x = 0;
+                    }
+                }
+            }
+        }
 
 
 
-
-        if(player.isSprinting && player.stamina > 0 && moveDir != new Vector3(0,0,0))
+        if (player.isSprinting && player.stamina > 0 && moveDir != new Vector3(0,0,0))
         {
             moveDir = new Vector3(moveDir.x * sprintSpeed, 0, moveDir.y * sprintSpeed);
             animator.speed = 3;
@@ -106,6 +155,7 @@ public class PlayerController : MonoBehaviour
         
         ApplyGravity(); // needs to be here
         characterController.Move(moveDir * Time.deltaTime);
+        
     }
 
     void ApplyFacingDirection()
