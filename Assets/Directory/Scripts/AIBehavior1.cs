@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(AINav))]
-public class AIBehavior : MonoBehaviour
+public class AIBehavior1 : MonoBehaviour
 {
     AINav aINav;
     NavMeshAgent navMeshAgent;
@@ -111,14 +111,14 @@ public class AIBehavior : MonoBehaviour
         {
             foreach (SpriteRenderer spriteRenderer in sr)
             {
-                spriteRenderer.flipX = false;
+                spriteRenderer.flipX = true;
             }
         }
         else if (navMeshAgent.velocity.x < -0.1f)
         {
             foreach (SpriteRenderer spriteRenderer in sr)
             {
-                spriteRenderer.flipX = true;
+                spriteRenderer.flipX = false;
             }
         }
     }
