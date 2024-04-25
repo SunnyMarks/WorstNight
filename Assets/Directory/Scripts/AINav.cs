@@ -41,7 +41,7 @@ public class AINav : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            Vector3 direction = other.transform.position - gameObject.transform.position - rayPositionOffset + new Vector3(0,0, 1.12f);
+            Vector3 direction = other.transform.position - gameObject.transform.position - rayPositionOffset /*+ new Vector3(0,0, 1.12f)*/;
             Ray ray = new Ray(gameObject.transform.position + rayPositionOffset, direction);
             RaycastHit hit;
             Debug.DrawRay(gameObject.transform.position + rayPositionOffset, direction, Color.green);

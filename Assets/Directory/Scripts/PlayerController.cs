@@ -84,7 +84,14 @@ public class PlayerController : MonoBehaviour
     void ApplyMovement()
     {
         moveDir = move.action.ReadValue<Vector2>();
-        
+        Debug.Log(move.action.ReadValue<Vector2>());
+
+
+
+
+
+
+
         if(player.isSprinting && player.stamina > 0 && moveDir != new Vector3(0,0,0))
         {
             moveDir = new Vector3(moveDir.x * sprintSpeed, 0, moveDir.y * sprintSpeed);
