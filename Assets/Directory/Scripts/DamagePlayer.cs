@@ -8,8 +8,10 @@ public class DamagePlayer : MonoBehaviour, IDamager
 
     [SerializeField] float damageAmount;
 
+    [SerializeField] AIBehavior aIBehavior;
     public void DoDamage()
     {
+        aIBehavior.DamageAnimation();
         player.health -= damageAmount;
         Debug.Log(player.health);
     }

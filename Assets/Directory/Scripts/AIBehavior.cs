@@ -123,17 +123,45 @@ public class AIBehavior : MonoBehaviour
         }
     }
 
-    private void ChangeAnimation(string animation, float crossfade = 0.2f)
+    public void ChangeAnimation(string animation, float crossfade = 0.2f, float time = 0)
     {
-        if (currentAnimation != animation)
+        if (time > 0) StartCoroutine(Wait());
+        else Validate();
+
+        IEnumerator Wait()
         {
-            currentAnimation = animation;
-            animator.CrossFade(animation, crossfade);
+            yield return new WaitForSeconds(time - crossfade);
+            Validate();
         }
+
+        void Validate()
+        {
+            if (currentAnimation != animation)
+            {
+                currentAnimation = animation;
+
+                if(currentAnimation == "")
+                {
+                    CheckAnimation();
+                }
+                else
+                {
+                    animator.CrossFade(animation, crossfade);
+                }
+                        
+                
+            }
+        }
+        
     }
 
     private void CheckAnimation()
     {
+        if(currentAnimation == "Damage")
+        {
+            return;
+        }
+
         if (navMeshAgent.velocity != Vector3.zero)
         {
             ChangeAnimation("Walk");
@@ -142,5 +170,10 @@ public class AIBehavior : MonoBehaviour
         {
             ChangeAnimation("Idle");
         }
+    }
+
+    public void DamageAnimation()
+    {
+        ChangeAnimation("Damage");
     }
 }

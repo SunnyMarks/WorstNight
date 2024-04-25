@@ -299,6 +299,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2854232172968090891, guid: e30463f1f069c5a4c865dcefbaa18cc8, type: 3}
+      propertyPath: aIBehavior
+      value: 
+      objectReference: {fileID: 1950959744}
     - target: {fileID: 4635249747789442405, guid: e30463f1f069c5a4c865dcefbaa18cc8, type: 3}
       propertyPath: m_Name
       value: Nurse (4)
@@ -514,7 +518,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1363264342}
-  m_LocalRotation: {x: -0, y: -0.0000000035225982, z: 0.0000000047172963, w: 1}
+  m_LocalRotation: {x: -0, y: 0.000000020590093, z: -0.000000027573288, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -602,7 +606,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375738287}
-  m_LocalRotation: {x: 0.4481477, y: -0.000000020667143, z: 0.000000010360573, w: 0.8939595}
+  m_LocalRotation: {x: 0.4481477, y: 0.000000015381808, z: -0.000000007711, w: 0.8939595}
   m_LocalPosition: {x: 1, y: 28.22, z: -25.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1065,6 +1069,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ccdf003e950c4842a7d4c84979babb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1950959744 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3453863547237707956, guid: e30463f1f069c5a4c865dcefbaa18cc8, type: 3}
+  m_PrefabInstance: {fileID: 1135537091}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46fa5e395be857c46958834b0e819c14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &6602307617795665094
