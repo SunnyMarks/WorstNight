@@ -125,7 +125,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            ChangeAnimation("Idle");
+            IdleAnimation();
         }
     }
 
@@ -172,6 +172,31 @@ public class PlayerController : MonoBehaviour
 
             case 3:
                 ChangeAnimation("Transform3_Walk");
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    private void IdleAnimation()
+    {
+        switch (player.state)
+        {
+            case 0:
+                ChangeAnimation("Idle");
+                break;
+
+            case 1:
+                ChangeAnimation("Transform1_Idle");
+                break;
+
+            case 2:
+                ChangeAnimation("Transform2_Idle");
+                break;
+
+            case 3:
+                ChangeAnimation("Transform3_Idle");
                 break;
 
             default:
