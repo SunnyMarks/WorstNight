@@ -457,7 +457,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1363264342}
-  m_LocalRotation: {x: -0, y: 0.000000003884666, z: -0.0000000052021667, w: 1}
+  m_LocalRotation: {x: -0, y: -0.0000000015874679, z: 0.0000000021258604, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -545,7 +545,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375738287}
-  m_LocalRotation: {x: 0.44814777, y: 0.00000002089747, z: -0.000000010476039, w: 0.8939595}
+  m_LocalRotation: {x: 0.44814777, y: 0.000000015220463, z: -0.000000007630118, w: 0.8939595}
   m_LocalPosition: {x: -12.419506, y: 26.89, z: -23.598255}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1040,6 +1040,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nurse
       objectReference: {fileID: 0}
+    - target: {fileID: 4635249747789442405, guid: e30463f1f069c5a4c865dcefbaa18cc8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4635249747789442406, guid: e30463f1f069c5a4c865dcefbaa18cc8, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1082,6 +1086,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4635249747789442406, guid: e30463f1f069c5a4c865dcefbaa18cc8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5078007184037558536, guid: e30463f1f069c5a4c865dcefbaa18cc8, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6605662999319349653, guid: e30463f1f069c5a4c865dcefbaa18cc8, type: 3}
