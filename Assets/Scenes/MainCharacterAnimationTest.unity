@@ -205,6 +205,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8241568545953393948, guid: 67286994a2d8d5e4ea569d37e4de2207, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.82277054
+      objectReference: {fileID: 0}
+    - target: {fileID: 8241568545953393948, guid: 67286994a2d8d5e4ea569d37e4de2207, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.56837374
+      objectReference: {fileID: 0}
+    - target: {fileID: 8241568545953393948, guid: 67286994a2d8d5e4ea569d37e4de2207, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8482566400242844477, guid: 67286994a2d8d5e4ea569d37e4de2207, type: 3}
       propertyPath: m_Name
       value: MainCharacter Skin
