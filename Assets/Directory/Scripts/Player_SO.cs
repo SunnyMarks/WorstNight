@@ -13,7 +13,7 @@ public class Player_SO : ScriptableObject
     public bool canMove;
     public bool isFlashLightOn;
     public bool hasFlashLight;
-    // conditionState
+    public int state;
 
 
 
@@ -24,6 +24,7 @@ public class Player_SO : ScriptableObject
         batteries = 0;
         stamina = 100;
         canMove = true;
+        state = 0;
     }
     
 }

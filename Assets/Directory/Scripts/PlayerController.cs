@@ -61,24 +61,167 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    private void ChangeAnimation(string animation, float crossfade = 0.2f)
+    private void OnEnable()
     {
-        if(currentAnimation != animation)
+        DamagePlayer.PlayerDamagedEvent += TransformAnimation;
+    }
+
+    private void OnDisable()
+    {
+        DamagePlayer.PlayerDamagedEvent -= TransformAnimation;
+    }
+
+    public void ChangeAnimation(string animation, float crossfade = .0f, float time = 0)
+    {
+        if (time > 0) StartCoroutine(Wait());
+        else Validate();
+
+        IEnumerator Wait()
         {
-            currentAnimation = animation;
-            animator.CrossFade(animation, crossfade);
+            yield return new WaitForSeconds(time - crossfade);
+            Validate();
         }
+
+        void Validate()
+        {
+            if (currentAnimation != animation)
+            {
+                currentAnimation = animation;
+
+                if (currentAnimation == "")
+                {
+                    CheckAnimation();
+                }
+                else
+                {
+                    animator.CrossFade(animation, crossfade);
+                }
+
+
+            }
+        }
+
     }
 
     private void CheckAnimation()
     {
+        if (currentAnimation == "Transform1" || currentAnimation == "Transform2" || currentAnimation == "Transform3")
+        {
+            return;
+        }
+
         if(moveDir != new Vector3(0,-1,0) && player.canMove)
         {
-            ChangeAnimation("Walk");
+            if (player.isSprinting && player.stamina > 0 && moveDir != new Vector3(0, 0, 0))
+            {
+                RunAnimation();
+
+            }
+            else
+            {
+                WalkAnimation();
+            }
+            
         }
         else
         {
-            ChangeAnimation("Idle");
+            IdleAnimation();
+        }
+    }
+
+    private void RunAnimation()
+    {
+        switch (player.state)
+        {
+            case 0:
+                ChangeAnimation("Run");
+                break;
+
+            case 1:
+                ChangeAnimation("Transform1_Run");
+                break;
+
+            case 2:
+                ChangeAnimation("Transform2_Run");
+                break;
+
+            case 3:
+                ChangeAnimation("Transform3_Run");
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    private void WalkAnimation()
+    {
+        switch (player.state)
+        {
+            case 0:
+                ChangeAnimation("Walk");
+                break;
+
+            case 1:
+                ChangeAnimation("Transform1_Walk");
+                break;
+
+            case 2:
+                ChangeAnimation("Transform2_Walk");
+                break;
+
+            case 3:
+                ChangeAnimation("Transform3_Walk");
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    private void IdleAnimation()
+    {
+        switch (player.state)
+        {
+            case 0:
+                ChangeAnimation("Idle");
+                break;
+
+            case 1:
+                ChangeAnimation("Transform1_Idle");
+                break;
+
+            case 2:
+                ChangeAnimation("Transform2_Idle");
+                break;
+
+            case 3:
+                ChangeAnimation("Transform3_Idle");
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    private void TransformAnimation()
+    {
+        switch (player.state)
+        {
+            case 1:
+                ChangeAnimation("Transform1");
+                break;
+
+            case 2:
+                ChangeAnimation("Transform2");
+                break;
+
+            case 3:
+                ChangeAnimation("Transform3");
+                break;
+
+            default:
+                break;
         }
     }
 
@@ -144,12 +287,12 @@ public class PlayerController : MonoBehaviour
         if (player.isSprinting && player.stamina > 0 && moveDir != new Vector3(0,0,0))
         {
             moveDir = new Vector3(moveDir.x * sprintSpeed, 0, moveDir.y * sprintSpeed);
-            animator.speed = 3;
+            //animator.speed = 3;
             isSprintingEvent?.Invoke();
         }
         else
         {
-            animator.speed = 1;
+            //animator.speed = 1;
             moveDir = new Vector3(moveDir.x * speed, 0, moveDir.y * speed);
         }
         
@@ -204,6 +347,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
 
 
 
