@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
         DamagePlayer.PlayerDamagedEvent -= TransformAnimation;
     }
 
-    public void ChangeAnimation(string animation, float crossfade = 0.2f, float time = 0)
+    public void ChangeAnimation(string animation, float crossfade = .0f, float time = 0)
     {
         if (time > 0) StartCoroutine(Wait());
         else Validate();

@@ -10,7 +10,7 @@ public class OnFinishPlayer : StateMachineBehaviour
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.GetComponentInParent<PlayerController>().ChangeAnimation(animation, 0.2f, stateInfo.length);
+        animator.GetComponentInParent<PlayerController>().ChangeAnimation(animation, 0, stateInfo.length);
 
     }
 }
