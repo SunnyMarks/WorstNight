@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask wallLayer;
 
 
-
+    
     void Start()
     {
         characterController = GetComponent<CharacterController>();

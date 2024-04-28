@@ -18,6 +18,9 @@ public class FlashlightController : MonoBehaviour
     [SerializeField] float drainAmount;
     [SerializeField] float batteryChargeAmount;
 
+    [SerializeField] SFX_SO flashLightOn;
+    [SerializeField] SFX_SO flashLightOff;
+
     private void Start()
     {
         cC = GetComponentInChildren<CapsuleCollider>();
@@ -62,12 +65,14 @@ public class FlashlightController : MonoBehaviour
                 //cC.enabled = false;
                 l.enabled = false;
                 player.isFlashLightOn = false;
+                flashLightOff.Play(AudioManager.instance.effectsSource);
             }
             else if (!player.isFlashLightOn && charge > 0)
             {
                 //cC.enabled = true;
                 l.enabled = true;
                 player.isFlashLightOn = true;
+                flashLightOn.Play(AudioManager.instance.effectsSource);
             }
         }
     }
@@ -82,6 +87,7 @@ public class FlashlightController : MonoBehaviour
                 cC.enabled = false;
                 l.enabled = false;
                 player.isFlashLightOn = false;
+                flashLightOff.Play(AudioManager.instance.effectsSource);
             }
         }
 

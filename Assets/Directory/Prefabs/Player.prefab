@@ -618,6 +618,8 @@ MonoBehaviour:
   charge: 100
   drainAmount: 1
   batteryChargeAmount: 50
+  flashLightOn: {fileID: 11400000, guid: bb9f47cbf674cf142a461e184eb00e75, type: 2}
+  flashLightOff: {fileID: 11400000, guid: 40cbc8d197c9cad4295dd55334662443, type: 2}
 --- !u!114 &6602307617963788754
 MonoBehaviour:
   m_ObjectHideFlags: 0
