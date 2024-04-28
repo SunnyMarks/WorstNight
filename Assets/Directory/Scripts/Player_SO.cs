@@ -25,6 +25,7 @@ public class Player_SO : ScriptableObject
         stamina = 100;
         canMove = true;
         state = 0;
+        isFlashLightOn = false;
     }
     
 }
