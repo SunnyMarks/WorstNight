@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class FlashlightController : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class FlashlightController : MonoBehaviour
 
     [SerializeField] SFX_SO flashLightOn;
     [SerializeField] SFX_SO flashLightOff;
+
+    public static Action<int> batteryUsedEvent;
 
     private void Start()
     {
@@ -100,6 +103,7 @@ public class FlashlightController : MonoBehaviour
         {
             charge += batteryChargeAmount;
             player.batteries -= 1;
+            batteryUsedEvent?.Invoke(player.batteries);
         }
 
     }

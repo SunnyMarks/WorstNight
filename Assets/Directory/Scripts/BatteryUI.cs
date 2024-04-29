@@ -15,11 +15,13 @@ public class BatteryUI : MonoBehaviour
     private void OnEnable()
     {
         Battery.batteryCollectedEvent += UpdateText;
+        FlashlightController.batteryUsedEvent += UpdateText;
     }
 
     private void OnDisable()
     {
         Battery.batteryCollectedEvent -= UpdateText;
+        FlashlightController.batteryUsedEvent += UpdateText;
     }
 
     void UpdateText(int num)
