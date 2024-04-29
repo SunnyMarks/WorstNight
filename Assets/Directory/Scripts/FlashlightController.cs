@@ -23,6 +23,7 @@ public class FlashlightController : MonoBehaviour
     [SerializeField] SFX_SO flashLightOff;
 
     public static Action<int> batteryUsedEvent;
+    public static Action<float> batteryDrainedEvent;
 
     private void Start()
     {
@@ -85,6 +86,8 @@ public class FlashlightController : MonoBehaviour
         if (player.isFlashLightOn)
         {
             charge -= drainAmount * Time.deltaTime;
+            charge = Mathf.Clamp(charge, 0, 100);
+            batteryDrainedEvent?.Invoke(charge);
             if (charge <= 0)
             {
                 cC.enabled = false;
