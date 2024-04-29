@@ -24,8 +24,23 @@ public class FlashLightUI : MonoBehaviour
 
     void UpdateText(float num)
     {
-        //tmp.text = num.ToString();
         tmp.text = string.Format("{0:0}", num) + "%";
+        
+        if (num <= 25)
+        {
+            Debug.Log("red");
+            tmp.color = Color.red;
+            return;
+        }
+        else if (num > 25 && num < 50)
+        {
+            tmp.color = Color.yellow;
+        }
+        else
+        {
+            tmp.color = Color.white;
+        }
+
     }
 
 
