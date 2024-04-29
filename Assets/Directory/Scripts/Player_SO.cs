@@ -14,7 +14,7 @@ public class Player_SO : ScriptableObject
     public bool isFlashLightOn;
     public bool hasFlashLight;
     public int state;
-
+    public float charge;
 
 
     void OnEnable()
@@ -26,6 +26,7 @@ public class Player_SO : ScriptableObject
         canMove = true;
         state = 0;
         isFlashLightOn = false;
+        charge = 100;
     }
     
 }

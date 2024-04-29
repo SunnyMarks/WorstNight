@@ -15,15 +15,15 @@ public class FlashlightController : MonoBehaviour
     //public bool hasFlashLight;
 
     [SerializeField] float maxCharge;
-    [SerializeField] float charge;
+    //[SerializeField] float charge;
     [SerializeField] float drainAmount;
     [SerializeField] float batteryChargeAmount;
 
     [SerializeField] SFX_SO flashLightOn;
     [SerializeField] SFX_SO flashLightOff;
 
-    public static Action<int> batteryUsedEvent;
-    public static Action<float> batteryDrainedEvent;
+    public static Action batteryUsedEvent;
+    public static Action batteryDrainedEvent;
 
     private void Start()
     {
@@ -71,7 +71,7 @@ public class FlashlightController : MonoBehaviour
                 player.isFlashLightOn = false;
                 flashLightOff.Play(AudioManager.instance.effectsSource);
             }
-            else if (!player.isFlashLightOn && charge > 0)
+            else if (!player.isFlashLightOn && player.charge > 0)
             {
                 //cC.enabled = true;
                 l.enabled = true;
@@ -85,10 +85,10 @@ public class FlashlightController : MonoBehaviour
     {
         if (player.isFlashLightOn)
         {
-            charge -= drainAmount * Time.deltaTime;
-            charge = Mathf.Clamp(charge, 0, 100);
-            batteryDrainedEvent?.Invoke(charge);
-            if (charge <= 0)
+            player.charge -= drainAmount * Time.deltaTime;
+            player.charge = Mathf.Clamp(player.charge, 0, 100);
+            batteryDrainedEvent?.Invoke();
+            if (player.charge <= 0)
             {
                 cC.enabled = false;
                 l.enabled = false;
@@ -104,9 +104,9 @@ public class FlashlightController : MonoBehaviour
     {
         if (player.batteries > 0)
         {
-            charge += batteryChargeAmount;
+            player.charge += batteryChargeAmount;
             player.batteries -= 1;
-            batteryUsedEvent?.Invoke(player.batteries);
+            batteryUsedEvent?.Invoke();
         }
 
     }

@@ -6,6 +6,7 @@ using TMPro;
 public class FlashLightUI : MonoBehaviour
 {
     TextMeshProUGUI tmp;
+    [SerializeField] Player_SO player;
 
     void Start()
     {
@@ -15,24 +16,26 @@ public class FlashLightUI : MonoBehaviour
     private void OnEnable()
     {
         FlashlightController.batteryDrainedEvent += UpdateText;
+        FlashlightController.batteryUsedEvent += UpdateText;
     }
 
     private void OnDisable()
     {
         FlashlightController.batteryDrainedEvent -= UpdateText;
+        FlashlightController.batteryUsedEvent -= UpdateText;
     }
 
-    void UpdateText(float num)
+    void UpdateText()
     {
-        tmp.text = string.Format("{0:0}", num) + "%";
+        tmp.text = string.Format("{0:0}", player.charge) + "%";
         
-        if (num <= 25)
+        if (player.charge <= 25)
         {
-            Debug.Log("red");
+            
             tmp.color = Color.red;
             return;
         }
-        else if (num > 25 && num < 50)
+        else if (player.charge > 25 && player.charge < 50)
         {
             tmp.color = Color.yellow;
         }

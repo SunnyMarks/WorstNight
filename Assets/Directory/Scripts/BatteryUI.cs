@@ -6,6 +6,7 @@ using TMPro;
 public class BatteryUI : MonoBehaviour
 {
     TextMeshProUGUI tmp;
+    [SerializeField] Player_SO player;
 
     void Start()
     {
@@ -24,8 +25,8 @@ public class BatteryUI : MonoBehaviour
         FlashlightController.batteryUsedEvent += UpdateText;
     }
 
-    void UpdateText(int num)
+    void UpdateText()
     {
-        tmp.text = num.ToString();
+        tmp.text = player.batteries.ToString();
     }
 }

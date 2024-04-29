@@ -44,7 +44,7 @@ public class Interactor : MonoBehaviour
         Battery.batteryCollectedEvent -= RemoveInteractable;
     }
 
-    void RemoveInteractable(int x)
+    void RemoveInteractable()
     {
         interactable = null;
     }
