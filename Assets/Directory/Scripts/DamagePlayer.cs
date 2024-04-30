@@ -18,14 +18,7 @@ public class DamagePlayer : MonoBehaviour, IDamager
         aIBehavior?.DamageAnimation();
         aIBehavior1?.DamageAnimation();
         player.health -= damageAmount;
-        if(player.state < 3)
-        {
-            player.state++;
-        }
-        else
-        {
-            return;
-        }
+        
         Debug.Log(player.health);
         PlayerDamagedEvent?.Invoke();
     }

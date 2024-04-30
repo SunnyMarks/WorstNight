@@ -206,22 +206,33 @@ public class PlayerController : MonoBehaviour
 
     private void TransformAnimation()
     {
-        switch (player.state)
+        StartCoroutine(TransformDelay());
+    }
+
+    IEnumerator TransformDelay()
+    {
+        yield return new WaitForSeconds(10);
+
+        if (player.state < 3)
         {
-            case 1:
-                ChangeAnimation("Transform1");
-                break;
+            player.state++;
+            switch (player.state)
+            {
+                case 1:
+                    ChangeAnimation("Transform1");
+                    break;
 
-            case 2:
-                ChangeAnimation("Transform2");
-                break;
+                case 2:
+                    ChangeAnimation("Transform2");
+                    break;
 
-            case 3:
-                ChangeAnimation("Transform3");
-                break;
+                case 3:
+                    ChangeAnimation("Transform3");
+                    break;
 
-            default:
-                break;
+                default:
+                    break;
+            }
         }
     }
 
