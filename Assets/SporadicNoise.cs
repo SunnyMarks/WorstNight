@@ -2,27 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class delay : MonoBehaviour
+public class SporadicNoise : MonoBehaviour
 {
     public AudioSource audioSource;
-    public AudioClip whispers;
-    void Start()
-    {
-        audioSource.PlayDelayed(10);
-        //StartCoroutine(playdelay());
-        StartCoroutine(PlaySoundRandomly());
-    }
-
-
-    IEnumerator playdelay()
-    {
-        yield return new WaitForSeconds(15);
-        audioSource.PlayOneShot(whispers);
-    }
 
     public AudioClip[] sounds;
     public float minInterval = 60f;
     public float maxInterval = 120f;
+    void Start()
+    {
+        audioSource.PlayDelayed(10);
+        StartCoroutine(PlaySoundRandomly());
+    }
 
     IEnumerator PlaySoundRandomly()
     {
@@ -42,6 +33,7 @@ public class delay : MonoBehaviour
         }
 
         AudioClip randomClip = sounds[Random.Range(0, sounds.Length)];
+        audioSource.panStereo = Random.Range(-1, 2);
         audioSource.PlayOneShot(randomClip);
     }
 }

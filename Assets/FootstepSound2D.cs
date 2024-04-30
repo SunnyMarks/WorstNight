@@ -6,11 +6,21 @@ public class FootstepSound2D : MonoBehaviour
 {
     public SFX_SO normalFootsteps;
 
+    public AudioSource audioSource;
+
     public void PlayFootstepSound()
     {
         if (normalFootsteps != null)
         {
-            normalFootsteps.Play(AudioManager.instance.effectsSource);
+            if (audioSource != null)
+            {
+                normalFootsteps.Play(audioSource);
+            }
+            else
+            {
+                normalFootsteps.Play(AudioManager.instance.effectsSource);
+            }
+            
         }
     }
 }
