@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
 
     public LayerMask wallLayer;
 
+    public static Action PlayerDeadEvent;
 
     
     void Start()
@@ -228,6 +229,10 @@ public class PlayerController : MonoBehaviour
 
                 case 3:
                     ChangeAnimation("Transform3");
+                    break;
+
+                case 4:
+                    PlayerDeadEvent?.Invoke();
                     break;
 
                 default:
