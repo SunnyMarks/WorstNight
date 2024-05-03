@@ -3,7 +3,11 @@ guid: d4993eae28c6338429541f7c0873cd8c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - player: {fileID: 11400000, guid: de807dd54d75ff9409c0a7ca6750b7a3, type: 2}
+  - damageSound: {fileID: 11400000, guid: 5da7359ce11f38f4f9b4c8e4da460e6d, type: 2}
+  - aIBehavior: {instanceID: 0}
+  - aIBehavior1: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
