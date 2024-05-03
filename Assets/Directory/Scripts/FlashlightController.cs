@@ -32,7 +32,7 @@ public class FlashlightController : MonoBehaviour
 
         l.enabled = false;
         //cC.enabled = false;
-        Cursor.visible = false;
+        //Cursor.visible = false;
     }
 
     private void Update()
