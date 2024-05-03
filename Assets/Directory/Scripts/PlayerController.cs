@@ -215,6 +215,8 @@ public class PlayerController : MonoBehaviour
         player.isTransforming = true;
         yield return new WaitForSeconds(10);
 
+        player.canMove = false;
+
         if (player.state < 3)
         {
             player.state++;

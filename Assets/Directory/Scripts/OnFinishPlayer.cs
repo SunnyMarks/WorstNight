@@ -19,5 +19,6 @@ public class OnFinishPlayer : StateMachineBehaviour
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
         player.isTransforming = false;
+        player.canMove = true;
     }
 }
