@@ -15,6 +15,7 @@ public class AINav : MonoBehaviour
     public bool seesPlayer;
 
     [SerializeField] Vector3 rayPositionOffset;
+    [SerializeField] Player_SO player;
 
     public LayerMask ignoreLayer;
     private void Awake()
@@ -39,7 +40,7 @@ public class AINav : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Player" && !player.isTransforming)
         {
             Vector3 direction = other.transform.position - gameObject.transform.position - rayPositionOffset /*+ new Vector3(0,0, 1.12f)*/;
             Ray ray = new Ray(gameObject.transform.position + rayPositionOffset, direction);
@@ -55,9 +56,11 @@ public class AINav : MonoBehaviour
                 {
                     seesPlayer = false;
                 }
-               
-            }
-            
+            }   
+        }
+        else
+        {
+            seesPlayer = false;
         }
     }
 

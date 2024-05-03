@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e000380e168ab7b4297606d649622ac1, type: 3}
-  m_Name: FootstepsNormal
+  m_Name: FootstepsNurse
   m_EditorClassIdentifier: 
   clips:
-  - clip: {fileID: 8300000, guid: bf060aa866bd4f54f9784bd4c06b5f48, type: 3}
+  - clip: {fileID: 8300000, guid: cd36b08d7355ca94fb526a9bc334f31f, type: 3}
     volume: 1

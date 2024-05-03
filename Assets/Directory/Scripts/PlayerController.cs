@@ -212,6 +212,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator TransformDelay()
     {
+        player.isTransforming = true;
         yield return new WaitForSeconds(10);
 
         if (player.state < 3)
@@ -238,6 +239,7 @@ public class PlayerController : MonoBehaviour
                 default:
                     break;
             }
+
         }
     }
 

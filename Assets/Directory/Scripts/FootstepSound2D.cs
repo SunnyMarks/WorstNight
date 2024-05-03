@@ -14,11 +14,13 @@ public class FootstepSound2D : MonoBehaviour
         {
             if (audioSource != null)
             {
-                normalFootsteps.Play(audioSource);
+                audioSource.pitch = Random.Range(.90f, 1.11f);
+                normalFootsteps.PlayRandom(audioSource);
             }
             else
             {
-                normalFootsteps.Play(AudioManager.instance.effectsSource);
+                //normalFootsteps.Play(AudioManager.instance.effectsSource);
+                Debug.Log("No audio Source found");
             }
             
         }

@@ -15,6 +15,11 @@ public class DamagePlayer : MonoBehaviour, IDamager
     public static Action PlayerDamagedEvent;
     public void DoDamage()
     {
+        if(player.isTransforming)
+        {
+            return;
+        }
+
         aIBehavior?.DamageAnimation();
         aIBehavior1?.DamageAnimation();
         player.health -= damageAmount;
