@@ -225,9 +225,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 11400000, guid: de807dd54d75ff9409c0a7ca6750b7a3, type: 2}
   damageSound: {fileID: 11400000, guid: 5da7359ce11f38f4f9b4c8e4da460e6d, type: 2}
+  LaughSound: {fileID: 0}
   damageAmount: 10
   aIBehavior: {fileID: 1315489239}
   aIBehavior1: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!1 &2771369127357757769
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,7 +361,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 8256
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
