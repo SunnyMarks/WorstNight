@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -552,7 +552,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.193, y: 0.06288644}
   m_AnchorMax: {x: 0.8095555, y: 0.90334076}
-  m_AnchoredPosition: {x: -1, y: -1.5}
+  m_AnchoredPosition: {x: -1, y: -1.5000916}
   m_SizeDelta: {x: 1110, y: 569}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &46805118
@@ -2024,7 +2024,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.7882863}
   m_AnchorMax: {x: 0.047000002, y: 0.89119846}
-  m_AnchoredPosition: {x: 0.20007324, y: 0}
+  m_AnchoredPosition: {x: 0.20019531, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &318592826
@@ -3134,6 +3134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Popup: {fileID: 1761569024}
   SceneStart: {fileID: 477714280}
+  player: {fileID: 11400000, guid: de807dd54d75ff9409c0a7ca6750b7a3, type: 2}
 --- !u!114 &477714287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3147,6 +3148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1761569024}
+  player: {fileID: 11400000, guid: de807dd54d75ff9409c0a7ca6750b7a3, type: 2}
 --- !u!1 &479264666 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7855924441020929845, guid: b6768ec40fd9cf44283f2e2a36abb988, type: 3}
@@ -6002,6 +6004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1915116491}
+  player: {fileID: 11400000, guid: de807dd54d75ff9409c0a7ca6750b7a3, type: 2}
 --- !u!1 &1257668272
 GameObject:
   m_ObjectHideFlags: 0
@@ -8106,7 +8109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.07822222, y: 0.90559924}
   m_AnchorMax: {x: 0.10870371, y: 0.9794581}
-  m_AnchoredPosition: {x: -0.2999878, y: 0.5}
+  m_AnchoredPosition: {x: -0.29992676, y: 0.5}
   m_SizeDelta: {x: 1, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1681253391
@@ -8634,6 +8637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Popup: {fileID: 1761569024}
   SceneStart: {fileID: 477714280}
+  player: {fileID: 11400000, guid: de807dd54d75ff9409c0a7ca6750b7a3, type: 2}
 --- !u!1 &1793317655 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8187468721447508356, guid: b6768ec40fd9cf44283f2e2a36abb988, type: 3}
@@ -9114,6 +9118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1915116491}
+  player: {fileID: 11400000, guid: de807dd54d75ff9409c0a7ca6750b7a3, type: 2}
 --- !u!1 &1916523684 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3734902903519135363, guid: 52cba546a4d3f5646ac3fee3854cca91, type: 3}
@@ -9660,6 +9665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1915116491}
+  player: {fileID: 11400000, guid: de807dd54d75ff9409c0a7ca6750b7a3, type: 2}
 --- !u!1 &2105983729 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4734528365089022000, guid: 52cba546a4d3f5646ac3fee3854cca91, type: 3}
@@ -9805,11 +9811,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1526951228838526587, guid: 9e33d9bed55f9c54680204bec75a1a2a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000015381808
+      value: -0.000000015381646
       objectReference: {fileID: 0}
     - target: {fileID: 1526951228838526587, guid: 9e33d9bed55f9c54680204bec75a1a2a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000007711001
+      value: 0.00000000771092
       objectReference: {fileID: 0}
     - target: {fileID: 1526951228838526587, guid: 9e33d9bed55f9c54680204bec75a1a2a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9845,11 +9851,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1526951228884771985, guid: 9e33d9bed55f9c54680204bec75a1a2a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 8.260059e-14
       objectReference: {fileID: 0}
     - target: {fileID: 1526951228884771985, guid: 9e33d9bed55f9c54680204bec75a1a2a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -1.09690035e-13
       objectReference: {fileID: 0}
     - target: {fileID: 1526951228884771998, guid: 9e33d9bed55f9c54680204bec75a1a2a, type: 3}
       propertyPath: m_Follow

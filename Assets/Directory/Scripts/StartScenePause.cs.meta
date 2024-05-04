@@ -3,7 +3,10 @@ guid: d9356905f3072c34b85e0095b864567a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Popup: {instanceID: 0}
+  - SceneStart: {instanceID: 0}
+  - player: {fileID: 11400000, guid: de807dd54d75ff9409c0a7ca6750b7a3, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

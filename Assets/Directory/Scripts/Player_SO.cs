@@ -16,12 +16,13 @@ public class Player_SO : ScriptableObject
     public int state;
     public float charge;
     public bool isTransforming;
+    public bool isGamePaused;
 
 
     void OnEnable()
     {
         health = 100;
-        Debug.Log(health);
+        //Debug.Log(health);
         batteries = 0;
         stamina = 100;
         canMove = true;
@@ -29,6 +30,7 @@ public class Player_SO : ScriptableObject
         isFlashLightOn = false;
         charge = 100;
         isTransforming = false;
+        isGamePaused = true;
     }
     
 }

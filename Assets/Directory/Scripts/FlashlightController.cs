@@ -37,28 +37,32 @@ public class FlashlightController : MonoBehaviour
 
     private void Update()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit, float.MaxValue, layerMask))
+        if(!player.isGamePaused)
         {
-            // Get the direction to the hit point
-            Vector3 targetDirection = hit.point - transform.position;
-            targetDirection.y = 0f; // Optional: Keep the rotation only in the horizontal plane
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit, float.MaxValue, layerMask))
+            {
+                // Get the direction to the hit point
+                Vector3 targetDirection = hit.point - transform.position;
+                targetDirection.y = 0f; // Optional: Keep the rotation only in the horizontal plane
 
-            // Rotate towards the hit point
-            transform.rotation = Quaternion.LookRotation(targetDirection);
+                // Rotate towards the hit point
+                transform.rotation = Quaternion.LookRotation(targetDirection);
+            }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                ToggleFlashLight();
+            }
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                UseBattery();
+            }
+
+            DrainCharge();
         }
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            ToggleFlashLight();
-        }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            UseBattery();
-        }
-
-        DrainCharge();
+        
     }
 
     void ToggleFlashLight()

@@ -9,10 +9,14 @@ public class StartScenePause : MonoBehaviour
     public GameObject Popup;
     public GameObject SceneStart;
 
+    [SerializeField] Player_SO player;
+
     private void Start()
     {
         Time.timeScale = 0;
         SceneStart.SetActive(true);
+
+        //player.isGamePaused = true;
     }
     public void OnSceneStart()
     {
@@ -20,6 +24,8 @@ public class StartScenePause : MonoBehaviour
         {
             Time.timeScale = 1;
             SceneStart.SetActive(false);
+            
+            player.isGamePaused = false;
         }
     }
 
