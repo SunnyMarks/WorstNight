@@ -50,7 +50,7 @@ public class FlashlightController : MonoBehaviour
                 transform.rotation = Quaternion.LookRotation(targetDirection);
             }
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.F))
             {
                 ToggleFlashLight();
             }

@@ -26,6 +26,8 @@ public class StartScenePause : MonoBehaviour
             SceneStart.SetActive(false);
             
             player.isGamePaused = false;
+
+            Cursor.visible = false;
         }
     }
 

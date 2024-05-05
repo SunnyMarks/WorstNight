@@ -15,6 +15,8 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0;
 
         player.isGamePaused = true;
+
+        //Cursor.visible = true;
     }
 
     public void Resume()
@@ -23,6 +25,8 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
 
         player.isGamePaused = false;
+
+        //Cursor.visible = false;
     }
 
     public class PopupOpener : MonoBehaviour
