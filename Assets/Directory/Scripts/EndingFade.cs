@@ -19,8 +19,14 @@ public class EndingFade : MonoBehaviour
         FinalDoor.FinalDoorOpenedEvent -= StartFade;
     }
 
+    private void Start()
+    {
+        image.enabled = false;
+    }
+
     void StartFade()
     {
+        image.enabled = true;
         StartCoroutine(Fade());
     }
 
