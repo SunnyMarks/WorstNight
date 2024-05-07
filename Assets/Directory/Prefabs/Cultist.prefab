@@ -255,7 +255,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2771369127357757769}
   m_LocalRotation: {x: 0.4481478, y: -0, z: -0, w: 0.8939595}
-  m_LocalPosition: {x: 0, y: -0.3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -511,8 +511,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46fa5e395be857c46958834b0e819c14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseSpeed: 6
-  patrolSpeed: 6
+  chaseSpeed: 4.5
+  patrolSpeed: 4.5
   chargeSpeed: 0
   stamina: 0
   drainRate: 0
@@ -552,7 +552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1256797703231558908, guid: a448bfc7f9a314443bc915a748349f06, type: 3}
       propertyPath: m_Bounds.m_Center.z
-      value: -0.0000004821141
+      value: -0.0000009585106
       objectReference: {fileID: 0}
     - target: {fileID: 1256797703231558908, guid: a448bfc7f9a314443bc915a748349f06, type: 3}
       propertyPath: m_Bounds.m_Extent.x
@@ -564,7 +564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1256797703231558908, guid: a448bfc7f9a314443bc915a748349f06, type: 3}
       propertyPath: m_Bounds.m_Extent.z
-      value: 0.00000047160376
+      value: 0.0000000056740532
       objectReference: {fileID: 0}
     - target: {fileID: 2345180260941220349, guid: a448bfc7f9a314443bc915a748349f06, type: 3}
       propertyPath: m_Layer
@@ -604,7 +604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4595765259265610282, guid: a448bfc7f9a314443bc915a748349f06, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: -0.0013789535
+      value: -0.0013799071
       objectReference: {fileID: 0}
     - target: {fileID: 4595765259265610282, guid: a448bfc7f9a314443bc915a748349f06, type: 3}
       propertyPath: m_Bounds.m_Center.z
@@ -680,7 +680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7598669866617993459, guid: a448bfc7f9a314443bc915a748349f06, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: 0.0013467073
+      value: 0.0013456345
       objectReference: {fileID: 0}
     - target: {fileID: 7598669866617993459, guid: a448bfc7f9a314443bc915a748349f06, type: 3}
       propertyPath: m_Bounds.m_Center.z
