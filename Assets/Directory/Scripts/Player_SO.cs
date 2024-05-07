@@ -22,7 +22,6 @@ public class Player_SO : ScriptableObject
     void OnEnable()
     {
         health = 100;
-        //Debug.Log(health);
         batteries = 0;
         stamina = 100;
         canMove = true;
@@ -31,6 +30,7 @@ public class Player_SO : ScriptableObject
         charge = 100;
         isTransforming = false;
         isGamePaused = true;
+        keys = 0;
     }
     
 }

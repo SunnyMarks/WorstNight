@@ -37,11 +37,15 @@ public class Interactor : MonoBehaviour
     private void OnEnable()
     {
         Battery.batteryCollectedEvent += RemoveInteractable;
+        Key.keyCollectedEvent += RemoveInteractable;
+        Door.DoorOpenedEvent += RemoveInteractable;
     }
 
     private void OnDisable()
     {
         Battery.batteryCollectedEvent -= RemoveInteractable;
+        Key.keyCollectedEvent -= RemoveInteractable;
+        Door.DoorOpenedEvent -= RemoveInteractable;
     }
 
     void RemoveInteractable()

@@ -1,30 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Door : MonoBehaviour, IInteractable
 {
-    public Transform doorTransform;
+    
 
-    //Vector3 doorNormal;
-    //Vector3 doorToObject;
-    //float dotProduct;
+    public Player_SO player;
 
-    public bool isOpen;
+    public static Action DoorOpenedEvent;
 
     //Transform playerTransform;
 
     public void Interact()
     {
-        if (!isOpen)
+       if(player.keys > 0)
         {
-            doorTransform.Rotate(0, -90, 0);
-            isOpen = true;
-        }
-        else
-        {
-            doorTransform.Rotate(0, 90, 0);
-            isOpen = false;
+            Debug.Log("Opening Door");
+            DoorOpenedEvent?.Invoke();
+            player.keys--;
+            Destroy(gameObject);
         }
     }
 

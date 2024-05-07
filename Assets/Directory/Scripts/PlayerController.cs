@@ -215,7 +215,7 @@ public class PlayerController : MonoBehaviour
         player.isTransforming = true;
         yield return new WaitForSeconds(10);
 
-        player.canMove = false;
+        
 
         if (player.state < 3)
         {
@@ -223,19 +223,23 @@ public class PlayerController : MonoBehaviour
             switch (player.state)
             {
                 case 1:
+                    player.canMove = false;
                     ChangeAnimation("Transform1");
                     break;
 
                 case 2:
+                    player.canMove = false;
                     ChangeAnimation("Transform2");
                     break;
 
                 case 3:
+                    player.canMove = false;
                     ChangeAnimation("Transform3");
                     break;
 
                 case 4:
-                    PlayerDeadEvent?.Invoke();
+                    player.isTransforming = false;
+                    //PlayerDeadEvent?.Invoke();
                     break;
 
                 default:

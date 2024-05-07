@@ -7,11 +7,11 @@ public class Key : MonoBehaviour, IInteractable
 {
     public Player_SO PlayerSO;
 
-    public static Action<int> keyCollectedEvent;
+    public static Action keyCollectedEvent;
     public void Interact()
     {
         PlayerSO.keys += 1;
-        keyCollectedEvent?.Invoke(PlayerSO.batteries);
+        keyCollectedEvent?.Invoke();
         Destroy(gameObject);
     }
 }
