@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -876,7 +876,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.193, y: 0.06288644}
   m_AnchorMax: {x: 0.8095555, y: 0.90334076}
-  m_AnchoredPosition: {x: -1, y: -1.5000916}
+  m_AnchoredPosition: {x: -1, y: -1.500061}
   m_SizeDelta: {x: 1110, y: 569}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &46805118
@@ -10077,10 +10077,10 @@ RectTransform:
   m_Father: {fileID: 1761569029}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.30100003, y: 0.5144008}
-  m_AnchorMax: {x: 0.702, y: 0.74366593}
-  m_AnchoredPosition: {x: 41.799927, y: 40.8}
-  m_SizeDelta: {x: -233, y: -68}
+  m_AnchorMin: {x: 0.30200002, y: 0.522}
+  m_AnchorMax: {x: 0.70100003, y: 0.73437876}
+  m_AnchoredPosition: {x: 41.599926, y: 33.600006}
+  m_SizeDelta: {x: -231, y: -59}
   m_Pivot: {x: 0.4, y: 0.4}
 --- !u!114 &1379036937
 MonoBehaviour:
@@ -10170,7 +10170,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -134.7649, y: 0, z: -97.512924, w: -68.2656}
+  m_margin: {x: -134.7649, y: 0, z: -97.512924, w: -57.00804}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -16341,11 +16341,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1526951228838526587, guid: 9e33d9bed55f9c54680204bec75a1a2a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000015381248
+      value: 0.000000015381808
       objectReference: {fileID: 0}
     - target: {fileID: 1526951228838526587, guid: 9e33d9bed55f9c54680204bec75a1a2a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000007710719
+      value: -0.000000007711
       objectReference: {fileID: 0}
     - target: {fileID: 1526951228838526587, guid: 9e33d9bed55f9c54680204bec75a1a2a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -16381,11 +16381,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1526951228884771985, guid: 9e33d9bed55f9c54680204bec75a1a2a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 2.1662672e-12
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1526951228884771985, guid: 9e33d9bed55f9c54680204bec75a1a2a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -2.9007907e-12
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1526951228884771998, guid: 9e33d9bed55f9c54680204bec75a1a2a, type: 3}
       propertyPath: m_Follow
